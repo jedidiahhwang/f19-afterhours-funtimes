@@ -19,10 +19,9 @@ var rollbar = new Rollbar({
 rollbar.log('Hello world!')
 
 // Serving files using middleware (express.static)
-app.use("/", function(){
+app.use("/", 
     express.static(path.join(__dirname, "../public"))
-    rollbar.log("Hit the endpoint")
-});
+);
 
 // Serving files using endpoints (app.get())
 // app.get("/", (req, res) => {
