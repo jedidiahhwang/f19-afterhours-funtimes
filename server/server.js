@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 
 app.get("/js", (req, res) => {
     rollbar.info("Served JS");
-    res.sendFile(path.join(__dirname, "../public/main.js"));
+    res.sendFile(path.join(__dirname, "../public"));
 });
 
 app.post("/yo", (req, res) => {
