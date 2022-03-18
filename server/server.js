@@ -24,10 +24,16 @@ rollbar.log('Hello world!')
 // );
 
 // Serving files using endpoints (app.get())
+// When using endpoints, you need to specify the name of the file
 app.get("/", (req, res) => {
     rollbar.info("We finally did it")
     rollbar.error("Oh crap here we go again")
     res.sendFile(path.join(__dirname, "../public/index.html"));
+});
+
+app.post("/yo", (req, res) => {
+    rollbar.info(`We have received ${req.body.text}`);
+    res.sendStatus(200);
 });
 
 const port = process.env.PORT || 4005;
