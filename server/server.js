@@ -26,6 +26,7 @@ rollbar.log('Hello world!')
 // Serving files using endpoints (app.get())
 app.get("/", (req, res) => {
     rollbar.info("We finally did it")
+    rollbar.error("Oh crap here we go again")
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
